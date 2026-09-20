@@ -1,17 +1,21 @@
 /* ============================================================
    Meher & Co. — shared stylesheet
-   Palette is drawn from the stockroom: rani pink, indigo,
-   marigold and emerald on unbleached ivory.
-   Change the six values in :root to re-skin every page.
+   Palette: deep bridal maroon, temple gold, peacock teal and
+   saffron on warm ivory — pulled from the sarees on the racks,
+   not a generic "bold and bright" kit.
+   The scalloped edge (.scallop) is the one signature motif,
+   borrowed from a temple gopuram / sari border — used once at
+   the header and footer only. Change the six --colors to re-skin
+   every page.
    ============================================================ */
 
 :root {
-  --ink: #2a1033;
-  --paper: #fff6ea;
-  --rani: #e01e64;
-  --indigo: #26348c;
-  --marigold: #f9b233;
-  --emerald: #0e8f63;
+  --ink: #2b0f10;
+  --paper: #fbf1e4;
+  --maroon: #7a1128;
+  --gold: #b5842a;
+  --teal: #0b6b66;
+  --saffron: #d9660b;
 
   --measure: 62ch;
   --edge: clamp(1.25rem, 5vw, 5rem);
@@ -42,10 +46,10 @@ body {
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--indigo); }
+a { color: var(--teal); }
 
 :focus-visible {
-  outline: 3px solid var(--indigo);
+  outline: 3px solid var(--teal);
   outline-offset: 3px;
 }
 
@@ -67,12 +71,32 @@ p { max-width: var(--measure); }
 .skip {
   position: absolute;
   left: -9999px;
-  background: var(--marigold);
+  background: var(--gold);
   color: var(--ink);
   padding: 0.75rem 1rem;
   font-weight: 700;
 }
 .skip:focus { left: 1rem; top: 1rem; z-index: 50; }
+
+/* ---------- signature motif: scalloped temple edge ---------- */
+/* Used once under the header and once above the footer. Not
+   repeated elsewhere in the page — one strong idea, not decoration
+   scattered everywhere. */
+
+.scallop {
+  height: 1.1rem;
+  background: var(--gold);
+  -webkit-mask-image: radial-gradient(circle at 11px 0, transparent 11px, black 11.5px);
+  mask-image: radial-gradient(circle at 11px 0, transparent 11px, black 11.5px);
+  -webkit-mask-size: 22px 22px;
+  mask-size: 22px 22px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+.scallop--up {
+  transform: rotate(180deg);
+}
 
 /* ---------- header ---------- */
 
@@ -83,7 +107,6 @@ p { max-width: var(--measure); }
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem var(--edge);
-  border-bottom: 3px solid var(--ink);
   background: var(--paper);
 }
 
@@ -103,7 +126,7 @@ p { max-width: var(--measure); }
   width: 1.3rem;
   height: 1.8rem;
   border-radius: 999px 999px 0 0;
-  background: var(--rani);
+  background: var(--maroon);
   border: 3px solid var(--ink);
 }
 
@@ -121,22 +144,22 @@ p { max-width: var(--measure); }
   border-bottom: 3px solid transparent;
 }
 
-.masthead nav a:hover { border-bottom-color: var(--rani); }
-.masthead nav a[aria-current="page"] { border-bottom-color: var(--indigo); }
+.masthead nav a:hover { border-bottom-color: var(--saffron); }
+.masthead nav a[aria-current="page"] { border-bottom-color: var(--teal); }
 
 /* ---------- bands ---------- */
 
 .band { padding: clamp(3rem, 8vw, 6rem) var(--edge); }
 .band--ink { background: var(--ink); color: var(--paper); }
-.band--indigo { background: var(--indigo); color: var(--paper); }
-.band--marigold { background: var(--marigold); }
-.band--emerald { background: var(--emerald); color: var(--paper); }
-.band--ink a, .band--indigo a, .band--emerald a { color: var(--marigold); }
+.band--teal { background: var(--teal); color: var(--paper); }
+.band--gold { background: var(--gold); color: var(--ink); }
+.band--maroon { background: var(--maroon); color: var(--paper); }
+.band--ink a, .band--teal a, .band--maroon a { color: var(--gold); }
 
 .button {
   display: inline-block;
-  background: var(--marigold);
-  color: var(--ink);
+  background: var(--saffron);
+  color: var(--paper);
   font-family: var(--display);
   font-weight: 700;
   font-size: 1.1rem;
@@ -154,7 +177,8 @@ p { max-width: var(--measure); }
   box-shadow: 3px 3px 0 var(--ink);
 }
 
-.button--paper { background: var(--paper); }
+.button--paper { background: var(--paper); color: var(--ink); }
+.button--gold { background: var(--gold); color: var(--ink); }
 
 .lede {
   font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem);
@@ -164,16 +188,15 @@ p { max-width: var(--measure); }
 /* ---------- hero ---------- */
 
 .hero {
-  background: var(--rani);
+  background: var(--maroon);
   color: var(--paper);
   padding: clamp(3rem, 9vw, 7rem) var(--edge);
-  border-bottom: 3px solid var(--ink);
   position: relative;
   overflow: hidden;
 }
 
 .hero h1 { max-width: 15ch; }
-.hero .lede { max-width: 42ch; margin-bottom: 2.25rem; }
+.hero .lede { max-width: 42ch; margin-bottom: 2.25rem; color: #f6e6d3; }
 
 .seal {
   position: absolute;
@@ -181,7 +204,7 @@ p { max-width: var(--measure); }
   right: clamp(1rem, 4vw, 4.5rem);
   width: clamp(7rem, 15vw, 10rem);
   padding: 2.25rem 1rem 1.5rem;
-  background: var(--marigold);
+  background: var(--gold);
   color: var(--ink);
   border: 3px solid var(--ink);
   border-radius: 999px 999px 0 0;
@@ -222,7 +245,7 @@ p { max-width: var(--measure); }
   font-size: 1.7rem;
   display: block;
   margin-bottom: 0.3rem;
-  color: var(--rani);
+  color: var(--maroon);
 }
 
 .steps {
@@ -247,7 +270,7 @@ p { max-width: var(--measure); }
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: var(--marigold);
+  background: var(--gold);
   color: var(--ink);
   border: 3px solid var(--ink);
   margin-bottom: 0.9rem;
@@ -292,7 +315,7 @@ button[type="submit"] { font: inherit; cursor: pointer; }
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.colophon a { color: var(--marigold); }
-.colophon h3 { color: var(--marigold); }
+.colophon a { color: var(--gold); }
+.colophon h3 { color: var(--gold); }
 .colophon p { margin: 0.25rem 0; }
 .colophon .fine { opacity: 0.72; font-size: 0.9rem; }
