@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visit us — Meher &amp; Co.</title>
+<meta name="description" content="Opening hours, address and appointment requests for fittings, bridal orders and alterations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="wordmark" href="index.html"><span></span>Meher &amp; Co.</a>
+  <nav aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="collection.html">Collection</a>
+    <a href="about.html">About</a>
+    <a href="visit.html" aria-current="page">Visit us</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="band band--ink">
+    <h2>Visit us</h2>
+    <p class="lede">Walk in any day we are open. Book ahead for bridal, for a group, or if you need a tailor's full attention.</p>
+  </section>
+
+  <section class="band">
+    <h3>Request an appointment</h3>
+
+    <!-- The form posts to Formspree. Replace YOUR_FORM_ID after
+         creating a free form at https://formspree.io - until then,
+         submissions will not go anywhere. -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone or WhatsApp</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label for="reason">What are you coming in for?</label>
+        <select id="reason" name="reason">
+          <option>Just browsing &mdash; no appointment needed</option>
+          <option>Bridal consultation</option>
+          <option>Guest outfit for a wedding</option>
+          <option>Menswear fitting</option>
+          <option>Blouse stitching</option>
+          <option>Alteration</option>
+          <option>Family group booking</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="date">Date of the event, if there is one</label>
+        <input id="date" name="date" type="date">
+      </div>
+
+      <div class="field">
+        <label for="details">Anything else we should know?</label>
+        <textarea id="details" name="details" placeholder="Colors you have in mind, how many people are coming, budget if you would rather say it now than in the shop."></textarea>
+      </div>
+
+      <button class="button" type="submit">Send request</button>
+    </form>
+  </section>
+
+  <section class="band band--marigold">
+    <h3>Where and when</h3>
+    <p>412 Main Street, Suite 2. We are above the pharmacy &mdash; the stairs are beside the blue door, and there is free parking behind the building after 11am.</p>
+    <p>Tuesday to Friday, 11am to 7pm. Saturday, 10am to 7pm. Sunday, 12pm to 5pm, with bridal appointments in the morning before we open. Closed Mondays.</p>
+    <p>Call <a href="tel:+15555550142">(555) 555-0142</a> or email <a href="mailto:hello@meherandco.com">hello@meherandco.com</a>. During wedding season the phone is faster than email.</p>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div>
+    <h3>Meher &amp; Co.</h3>
+    <p>Indian traditional wear, stitched and altered in the shop.</p>
+    <p>412 Main Street, Suite 2</p>
+  </div>
+  <div>
+    <p><a href="tel:+15555550142">(555) 555-0142</a></p>
+    <p><a href="mailto:hello@meherandco.com">hello@meherandco.com</a></p>
+  </div>
+  <div>
+    <p>Tue&ndash;Fri, 11am&ndash;7pm</p>
+    <p>Sat, 10am&ndash;7pm &middot; Sun, 12pm&ndash;5pm</p>
+    <p class="fine">Closed Mondays. Bridal appointments on Sunday mornings.</p>
+  </div>
+</footer>
+
+</body>
+</html>
